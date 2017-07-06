@@ -177,15 +177,11 @@ namespace MsSqlToSqlLiteConverter
             string val = value?.ToString();
             if (value != null)
             {
-                try
+                if (cs.ColumnType == "guid")
                 {
                     var guid = new Guid(val);
                     val = BitConverter.ToString(guid.ToByteArray()).Replace("-", "");
                     t = DbType.Guid;
-                }
-                catch (Exception)
-                {
-                    // ignored
                 }
                 switch (t)
                 {
