@@ -201,7 +201,7 @@ namespace MsSqlToSqlLiteConverter
                     case DbType.Date:
                     case DbType.DateTime2:
                     case DbType.DateTime:
-                        val = string.Concat("'", ((DateTime)value).ToString("yyyy-MM-dd hh:mm"), "'");
+                        val = string.Concat("'", ((DateTime)value).ToString("yyyy-MM-dd hh:mm:ss"), "'");
                         break;
                     case DbType.Double:
                     case DbType.Decimal:
